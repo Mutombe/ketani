@@ -32,7 +32,7 @@ const routes = [
 
 const MapChart = () => {
   return (
-    <div className="w-full h-[600px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative">
+    <div className="w-full h-[800px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative">
       
       {/* Title Overlay */}
       <div className="absolute top-8 left-8 z-10 pointer-events-none">

@@ -15,8 +15,8 @@ import {
 import InteractiveMap from "../components/InteractiveMap";
 import SEO from "../components/SEO";
 import { useNavigate } from "react-router-dom";
-import { useRef } from 'react';
-import { useInView, animate } from 'framer-motion';
+import { useRef } from "react";
+import { useInView, animate } from "framer-motion";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
@@ -36,7 +36,6 @@ const handleAction = (action) => {
   }
 };
 
-
 const heroImages = [
   "/23.jpg", // Container Port
   "/4.jpg", // Rail Transport
@@ -47,11 +46,14 @@ const heroImages = [
 const Counter = ({ from = 0, to, suffix = "" }) => {
   const nodeRef = useRef();
   // Animation triggers only when element is in view
-  const isInView = useInView(nodeRef, { once: true, margin: "-10% 0px -10% 0px" });
+  const isInView = useInView(nodeRef, {
+    once: true,
+    margin: "-10% 0px -10% 0px",
+  });
 
   useEffect(() => {
     const node = nodeRef.current;
-    
+
     if (isInView) {
       const controls = animate(from, to, {
         duration: 2.5,
@@ -74,7 +76,7 @@ const Counter = ({ from = 0, to, suffix = "" }) => {
 const stats = [
   { value: 50, suffix: "+", label: "Years Combined Experience", icon: Clock },
   { value: 6, suffix: "", label: "Global Hubs", icon: Globe },
-  { value: 1, suffix: "M+", label: "Tons Moved Annually", icon: BarChart3 }, 
+  { value: 1, suffix: "M+", label: "Tons Moved Annually", icon: BarChart3 },
   { value: 100, suffix: "%", label: "Compliance Rate", icon: ShieldCheck },
 ];
 
@@ -175,13 +177,17 @@ export default function Home() {
               precision and reliability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-ketani-600 hover:bg-ketani-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg shadow-ketani-500/25 flex items-center justify-center gap-2 group"
-                onClick={() => navigate("/contact")}>
+              <button
+                className="bg-ketani-600 hover:bg-ketani-500 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg shadow-ketani-500/25 flex items-center justify-center gap-2 group"
+                onClick={() => navigate("/contact")}
+              >
                 Get a Quote{" "}
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <button className="border border-slate-600 hover:border-white hover:bg-white/5 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all"
-                onClick={() => navigate("/services")}>
+              <button
+                className="border border-slate-600 hover:border-white hover:bg-white/5 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all"
+                onClick={() => navigate("/services")}
+              >
                 Our Services
               </button>
             </div>
@@ -201,80 +207,93 @@ export default function Home() {
         </motion.div>
       </section>
 
-{/* 2. STATS BANNER */}
+      {/* 2. STATS BANNER */}
       <section className="bg-ketani-600 py-12 relative z-20 -mt-8 shadow-2xl">
         <div className="container mx-auto px-6">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                {stats.map((stat, i) => (
-                    <motion.div 
-                        key={i}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: i * 0.1 }}
-                        className="text-center text-white border-r border-ketani-500 last:border-0"
-                    >
-                        <stat.icon className="mx-auto mb-3 opacity-80" size={24} />
-                        <div className="text-3xl md:text-5xl font-bold mb-1 font-mono tracking-tighter">
-                            <Counter from={0} to={stat.value} suffix={stat.suffix} />
-                        </div>
-                        <div className="text-xs md:text-sm text-ketani-100 uppercase tracking-wider font-medium mt-2">
-                            {stat.label}
-                        </div>
-                    </motion.div>
-                ))}
-            </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center text-white border-r border-ketani-500 last:border-0"
+              >
+                <stat.icon className="mx-auto mb-3 opacity-80" size={24} />
+                <div className="text-3xl md:text-5xl font-bold mb-1 font-mono tracking-tighter">
+                  <Counter from={0} to={stat.value} suffix={stat.suffix} />
+                </div>
+                <div className="text-xs md:text-sm text-ketani-100 uppercase tracking-wider font-medium mt-2">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-{/* 3. MISSION & VISION (Text Heavy) */}
+      {/* 3. MISSION & VISION (Text Heavy) */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-                <motion.div {...fadeInUp}>
-                    <h4 className="text-ketani-600 font-bold uppercase tracking-wider mb-2">Our Mission</h4>
-                    <h2 className="text-4xl font-bold text-slate-900 mb-6 leading-snug">
-                        Optimizing the movement of <br/>mineral & agricultural products.
-                    </h2>
-                    <p className="text-slate-600 text-lg mb-6 leading-relaxed">
-                        Ketani Logistics is a global provider of transportation, logistics, and procurement services with a focus on multimodal bulk and commodity logistics.
-                    </p>
-                    <p className="text-slate-600 mb-8 leading-relaxed">
-                        We aim to offer seamless coordination of rail, port, and sea freight operations, ensuring cost-effectiveness, reliability, and end-to-end visibility. Our experienced team leverages in-depth industry knowledge to empower our clients to thrive in complex trade corridors.
-                    </p>
-                    <a href="/about" className="text-ketani-700 font-bold border-b-2 border-ketani-200 hover:border-ketani-600 transition-all pb-1 inline-flex items-center gap-1">
-                        Read Our Full Profile <ArrowRight size={16}/>
-                    </a>
-                </motion.div>
-                
-                <motion.div 
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="relative"
-                >
-                    <div className="relative overflow-hidden">
-                        <img 
-                            src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2076&auto=format&fit=crop" 
-                            alt="Container Ship" 
-                            className="w-full h-full object-cover rounded-2xl" 
-                        />
-                        
-                        {/* 1. Top Fade Overlay (Always visible) */}
-                        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/90 to-transparent" />
-                        
-                        {/* 2. Left Fade Overlay (Hidden on Mobile, Visible on Desktop) */}
-                        <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-white via-white/90 to-transparent hidden md:block" />
-                    </div>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <motion.div {...fadeInUp}>
+              <h4 className="text-ketani-600 font-bold uppercase tracking-wider mb-2">
+                Our Mission
+              </h4>
+              <h2 className="text-4xl font-bold text-slate-900 mb-6 leading-snug">
+                Optimizing the movement of <br />
+                mineral & agricultural products.
+              </h2>
+              <p className="text-slate-600 text-lg mb-6 leading-relaxed">
+                Ketani Logistics is a global provider of transportation,
+                logistics, and procurement services with a focus on multimodal
+                bulk and commodity logistics.
+              </p>
+              <p className="text-slate-600 mb-8 leading-relaxed">
+                We aim to offer seamless coordination of rail, port, and sea
+                freight operations, ensuring cost-effectiveness, reliability,
+                and end-to-end visibility. Our experienced team leverages
+                in-depth industry knowledge to empower our clients to thrive in
+                complex trade corridors.
+              </p>
+              <a
+                href="/about"
+                className="text-ketani-700 font-bold border-b-2 border-ketani-200 hover:border-ketani-600 transition-all pb-1 inline-flex items-center gap-1"
+              >
+                Read Our Full Profile <ArrowRight size={16} />
+              </a>
+            </motion.div>
 
-                    {/* Floating Card */}
-                    <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl max-w-xs border-l-4 border-ketani-500 hidden md:block z-10">
-                        <p className="text-slate-800 font-serif italic text-lg">
-                            "To be the leading global provider of integrated logistics solutions."
-                        </p>
-                    </div>
-                </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src="/1.jpg"
+                  alt="Container Ship"
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+
+                {/* 1. Top Fade Overlay (Always visible) */}
+                <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white via-white/90 to-transparent" />
+
+                {/* 2. Left Fade Overlay (Hidden on Mobile, Visible on Desktop) */}
+                <div className="absolute top-0 left-0 bottom-0 w-32 bg-gradient-to-r from-white via-white/90 to-transparent hidden md:block" />
+              </div>
+
+              {/* Floating Card */}
+              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl max-w-xs border-l-4 border-ketani-500 hidden md:block z-10">
+                <p className="text-slate-800 font-serif italic text-lg">
+                  "To be the leading global provider of integrated logistics
+                  solutions."
+                </p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
