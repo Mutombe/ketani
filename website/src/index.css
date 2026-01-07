@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Font */
+  --font-sans: "Inter", system-ui, sans-serif;
+
+  /* Ketani Brand Palette (Ocean & Steel) */
+  --color-ketani-50: #f0f9ff;
+  --color-ketani-100: #e0f2fe;
+  --color-ketani-200: #bae6fd;
+  --color-ketani-300: #7dd3fc;
+  --color-ketani-400: #38bdf8;
+  --color-ketani-500: #0ea5e9; /* Brand Light Blue */
+  --color-ketani-600: #0284c7;
+  --color-ketani-700: #0369a1; /* Brand Primary Blue */
+  --color-ketani-800: #075985;
+  --color-ketani-900: #0c4a6e; /* Deep Navy */
+  --color-ketani-950: #082f49;
+
+  /* Custom Animations */
+  --animate-blob: blob 7s infinite;
+
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+}
