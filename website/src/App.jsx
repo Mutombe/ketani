@@ -23,12 +23,7 @@ const ScrollToTop = () => {
   return null;
 };
 // Placeholder components for routes not fully detailed above to prevent errors
-const Placeholder = ({ title }) => (
-  <div className="pt-32 pb-20 container mx-auto px-6 min-h-screen">
-    <h1 className="text-4xl font-bold text-slate-900">{title}</h1>
-    <p className="mt-4 text-slate-600">This page is under construction based on the company profile.</p>
-  </div>
-);
+
 
 function App() {
   return (
@@ -85,13 +80,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/logistics" element={<Logistics />} />
             <Route path="/commodities" element={<Commodities />} />
-            {/* Placeholder routes for other pages */}
-            <Route path="/shipping" element={<Placeholder title="Shipping" />} />
             <Route path="/hypermedia" element={<Hypermedia />} />
-            <Route path="/freight" element={<Placeholder title="Freight" />} />
-            <Route path="/supplychain" element={<Placeholder title="Supply Chain" />} />
-            <Route path="/privacy-policy" element={<Placeholder title="Privacy Policy" />} />
-            <Route path="/terms-of-service" element={<Placeholder title="Terms of Service" />} />
           </Routes>
         </main>
         <Footer />

@@ -32,12 +32,12 @@ const routes = [
 
 const MapChart = () => {
   return (
-    <div className="w-full h-[800px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative">
+    <div className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[800px] bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 relative">
       
       {/* Title Overlay */}
-      <div className="absolute top-8 left-8 z-10 pointer-events-none">
-        <h3 className="text-white text-2xl font-bold">Global Operations</h3>
-        <p className="text-ketani-400">Live Logistics Corridors</p>
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-10 pointer-events-none">
+        <h3 className="text-white text-lg sm:text-xl md:text-2xl font-bold">Global Operations</h3>
+        <p className="text-ketani-400 text-xs sm:text-sm md:text-base">Live Logistics Corridors</p>
       </div>
 
       <ComposableMap projection="geoMercator" projectionConfig={{ scale: 140 }}>
@@ -133,15 +133,15 @@ const MapChart = () => {
       </ComposableMap>
       
       {/* Legend */}
-      <div className="absolute bottom-6 right-6 bg-slate-800/80 backdrop-blur p-4 rounded-xl border border-slate-700 text-xs text-white">
-        <div className="flex items-center gap-2 mb-2">
-            <span className="w-3 h-3 rounded-full bg-amber-500"></span> Headquarters (Harare)
+      <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 bg-slate-800/80 backdrop-blur p-3 sm:p-4 rounded-xl border border-slate-700 text-[10px] sm:text-xs text-white">
+        <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500"></span> Headquarters (Harare)
         </div>
-        <div className="flex items-center gap-2 mb-2">
-            <span className="w-3 h-3 rounded-full bg-ketani-500"></span> Strategic Hubs
+        <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-ketani-500"></span> Strategic Hubs
         </div>
         <div className="flex items-center gap-2">
-            <span className="w-6 h-0.5 bg-ketani-500/50"></span> Trade Routes
+            <span className="w-5 sm:w-6 h-0.5 bg-ketani-500/50"></span> Trade Routes
         </div>
       </div>
     </div>
