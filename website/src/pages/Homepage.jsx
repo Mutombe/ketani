@@ -412,41 +412,41 @@ export default function Home() {
         </button>
       </div>
 
-{/* 5. FULL WIDTH MAP SECTION */}
-<section className="py-12 sm:py-16 md:py-24 bg-slate-900 overflow-hidden relative">
-  {/* Background Elements */}
-  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
-  
-  <div className="container mx-auto px-4 sm:px-6 mb-8 sm:mb-12 text-center">
-    <motion.h2
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
-    >
-      Global Operational Reach
-    </motion.h2>
-    <motion.p
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed"
-    >
-      From inland mines in Zimbabwe to ports in China and Europe. We
-      bridge the gap between supply and demand.
-    </motion.p>
-  </div>
-  
-  <div className="w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-8">
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8 }}
-      className="shadow-2xl shadow-black/50 rounded-2xl sm:rounded-3xl overflow-hidden"
-    >
-      <InteractiveMap />
-    </motion.div>
-  </div>
-</section>
+      {/* 5. FULL WIDTH MAP SECTION */}
+      <section className="py-12 sm:py-16 md:py-24 bg-slate-900 overflow-hidden relative">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent"></div>
+
+        <div className="container mx-auto px-4 sm:px-6 mb-8 sm:mb-12 text-center">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6"
+          >
+            Global Operational Reach
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-slate-400 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed"
+          >
+            From inland mines in Zimbabwe to ports in China and Europe. We
+            bridge the gap between supply and demand.
+          </motion.p>
+        </div>
+
+        <div className="w-full max-w-[1400px] mx-auto px-3 sm:px-4 md:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="shadow-2xl shadow-black/50 rounded-2xl sm:rounded-3xl overflow-hidden"
+          >
+            <InteractiveMap />
+          </motion.div>
+        </div>
+      </section>
 
       {/* 6. WHY CHOOSE US (List) */}
       <section className="py-24 bg-white">
