@@ -15,7 +15,7 @@ export default function About() {
       <SEO title="About Us" description="Ketani Logistics - Leading global provider of integrated logistics solutions with over 50 years combined experience." />
 
       {/* 1. NEW HERO SECTION */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-slate-900 overflow-hidden">
+      <section className="relative h-[80vh] flex items-center justify-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900/90 z-10" />
           <img 
@@ -24,7 +24,7 @@ export default function About() {
             alt="About Ketani" 
           />
         </div>
-        <div className="relative z-20 text-center max-w-4xl px-6">
+        <div className="relative z-20 text-center max-w-4xl px-6 pt-10">
           <motion.span 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
@@ -45,7 +45,7 @@ export default function About() {
             transition={{ delay: 0.2 }}
             className="text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto"
           >
-            We are a global provider of transportation, logistics, and procurement services, revolutionizing the movement of bulk commodities across Southern Africa and beyond[cite: 6].
+            We are a global provider of transportation, logistics, and procurement services, revolutionizing the movement of bulk commodities across Southern Africa and beyond.
           </motion.p>
         </div>
       </section>
@@ -58,14 +58,14 @@ export default function About() {
                     <div className="absolute top-0 right-0 p-8 opacity-10"><Eye size={120} /></div>
                     <h3 className="text-2xl font-bold mb-4 text-ketani-400">Our Vision</h3>
                     <p className="text-lg leading-relaxed opacity-90">
-                        To be the leading global provider of integrated logistics solutions, revolutionizing the transportation of bulk commodities and enhancing supply chain efficiency across Southern Africa and beyond[cite: 10].
+                        To be the leading global provider of integrated logistics solutions, revolutionizing the transportation of bulk commodities and enhancing supply chain efficiency across Southern Africa and beyond.
                     </p>
                 </motion.div>
                 <motion.div {...fadeIn} transition={{ delay: 0.2 }} className="bg-ketani-50 p-12 rounded-3xl relative overflow-hidden border border-ketani-100 shadow-lg">
                     <div className="absolute top-0 right-0 p-8 opacity-10 text-ketani-600"><Target size={120} /></div>
                     <h3 className="text-2xl font-bold mb-4 text-ketani-700">Our Mission</h3>
                     <p className="text-lg leading-relaxed text-slate-700">
-                        We are committed to optimizing the movement of mineral products and agricultural inputs through multimodal logistics. We aim to offer seamless coordination of rail, port, and sea freight operations [cite: 12-13].
+                        We are committed to optimizing the movement of mineral products and agricultural inputs through multimodal logistics. We aim to offer seamless coordination of rail, port, and sea freight operations.
                     </p>
                 </motion.div>
             </div>
@@ -78,7 +78,7 @@ export default function About() {
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-4xl font-bold text-slate-900 mb-6">Our Strategic Footprint</h2>
                 <p className="text-slate-600 text-lg">
-                    Ketani Logistics maintains a strong operational footprint across Southern Africa, supporting export-oriented supply chains serving global markets[cite: 8].
+                    Ketani Logistics maintains a strong operational footprint across Southern Africa, supporting export-oriented supply chains serving global markets.
                 </p>
             </div>
 
@@ -98,7 +98,7 @@ export default function About() {
                     <ul className="space-y-2">
                         {['Zimbabwe', 'South Africa', 'Mozambique', 'Zambia', 'Namibia', 'Botswana'].map(c => (
                             <li key={c} className="flex items-center gap-2 text-slate-700 font-medium">
-                                <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span> {c} [cite: 8, 64-76]
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span> {c}
                             </li>
                         ))}
                     </ul>
@@ -120,7 +120,7 @@ export default function About() {
                     <ul className="space-y-2">
                         {['China & Hong Kong', 'Europe (Netherlands, Germany)', 'USA & Canada', 'Turkey', 'Singapore', 'Indonesia'].map(c => (
                             <li key={c} className="flex items-center gap-2 text-slate-700 font-medium">
-                                <span className="w-1.5 h-1.5 rounded-full bg-ketani-500"></span> {c} [cite: 66-74]
+                                <span className="w-1.5 h-1.5 rounded-full bg-ketani-500"></span> {c}
                             </li>
                         ))}
                     </ul>
@@ -137,20 +137,20 @@ export default function About() {
                     </div>
                     <h3 className="text-xl font-bold mb-4">Why We Lead</h3>
                     <p className="text-slate-400 mb-6 text-sm">
-                        With over 50 years of combined experience[cite: 86], we offer:
+                        With over 50 years of combined experience, we offer:
                     </p>
                     <ul className="space-y-3">
                         <li className="flex items-start gap-3">
                             <TrendingUp size={18} className="text-ketani-500 mt-1"/>
-                            <span className="text-sm">Rail-centric bulk logistics capability [cite: 80]</span>
+                            <span className="text-sm">Rail-centric bulk logistics capability </span>
                         </li>
                         <li className="flex items-start gap-3">
                             <TrendingUp size={18} className="text-ketani-500 mt-1"/>
-                            <span className="text-sm">Integrated rail-port-sea solutions [cite: 81]</span>
+                            <span className="text-sm">Integrated rail-port-sea solutions </span>
                         </li>
                         <li className="flex items-start gap-3">
                             <TrendingUp size={18} className="text-ketani-500 mt-1"/>
-                            <span className="text-sm">End-to-end cargo visibility and control [cite: 83]</span>
+                            <span className="text-sm">End-to-end cargo visibility and control </span>
                         </li>
                     </ul>
                 </motion.div>

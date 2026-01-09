@@ -15,7 +15,7 @@ export default function Careers() {
       <SEO title="Careers" description="Join the Ketani Logistics team. We are looking for talented individuals to help us revolutionize logistics." />
       
       {/* 1. HERO SECTION */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-slate-900 overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-ketani-900/50 z-10" />
           <img 
@@ -24,12 +24,12 @@ export default function Careers() {
             alt="Careers Team" 
           />
         </div>
-        <div className="relative z-20 container mx-auto px-6">
+        <div className="relative z-20 container mx-auto px-6 pt-10">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl">
                 <span className="text-ketani-400 font-bold tracking-widest uppercase mb-4 block">Work With Us</span>
                 <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">Build the Future of <br/><span className="text-ketani-500">Logistics</span></h1>
                 <p className="text-xl text-slate-300 leading-relaxed max-w-2xl">
-                    Join a team boasting over 50 years of combined experience. [cite_start]We are revolutionizing bulk commodity transport across Africa[cite: 86].
+                    Join a team boasting over 50 years of combined experience.We are revolutionizing bulk commodity transport across Africa
                 </p>
             </motion.div>
         </div>
@@ -62,7 +62,7 @@ export default function Careers() {
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-4xl font-bold text-slate-900 mb-4">Open Positions</h2>
             <p className="text-slate-600">
-              [cite_start]We are always looking for talented individuals to help us optimize the movement of mineral products and agricultural inputs[cite: 12].
+              We are always looking for talented individuals to help us optimize the movement of mineral products and agricultural inputs.
             </p>
           </div>
 

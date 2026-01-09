@@ -68,16 +68,16 @@ export default function Commodities() {
       />
 
       {/* HERO */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-slate-900 overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10 " />
           <img
             src="/14.jpg"
             className="w-full h-full object-cover"
             alt="Mineral Stockpiles"
           />
         </div>
-        <div className="relative z-20 container mx-auto px-6">
+        <div className="relative z-20 container mx-auto px-6 pt-10">
           <motion.div
             initial={{ x: -30, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -93,7 +93,7 @@ export default function Commodities() {
             <p className="text-xl text-slate-300 max-w-2xl">
               We specialize in the efficient movement of mineral products,
               agricultural inputs, and project cargo across Southern
-              Africa[cite: 7].
+              Africa.
             </p>
           </motion.div>
         </div>
@@ -175,7 +175,7 @@ export default function Commodities() {
               </h2>
               <p className="text-slate-600 text-lg mb-6 leading-relaxed">
                 Beyond bulk minerals, Ketani Logistics handles complex capital
-                goods and project cargo[cite: 55]. Whether it's heavy mining
+                goods and project cargo. Whether it's heavy mining
                 machinery or agricultural equipment, we ensure safe and timely
                 delivery to inland locations.
               </p>

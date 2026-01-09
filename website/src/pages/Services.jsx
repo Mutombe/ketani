@@ -15,7 +15,7 @@ export default function Services() {
       <SEO title="Our Services" description="Multimodal logistics including Rail, Port Operations, and Ocean Freight for bulk commodities." />
       
       {/* HERO */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-slate-900 overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-slate-900/80 z-10" />
           <img 
@@ -24,7 +24,7 @@ export default function Services() {
             alt="Services Hero" 
           />
         </div>
-        <div className="relative z-20 text-center max-w-4xl px-6">
+        <div className="relative z-20 text-center max-w-4xl px-6 pt-10">
           <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-ketani-400 font-bold tracking-widest uppercase mb-4 block">
             Integrated Solutions
           </motion.span>
@@ -32,7 +32,7 @@ export default function Services() {
             Multimodal <span className="text-ketani-500">Logistics Strength</span>
           </motion.h1>
           <p className="text-xl text-slate-300">
-            Ketani Logistics integrates rail, road, port, and sea freight into a single coordinated solution[cite: 18].
+            Ketani Logistics integrates rail, road, port, and sea freight into a single coordinated solution.
           </p>
         </div>
       </section>
@@ -47,14 +47,14 @@ export default function Services() {
               </div>
               <h2 className="text-4xl font-bold text-slate-900 mb-6">Rail Logistics</h2>
               <p className="text-slate-600 text-lg mb-6 leading-relaxed">
-                Rail forms a core pillar of our capability, particularly for high-volume bulk commodities moving from inland producers to export gateways[cite: 19]. We specialize in rail-based bulk and break-bulk transport solutions.
+                Rail forms a core pillar of our capability, particularly for high-volume bulk commodities moving from inland producers to export gateways. We specialize in rail-based bulk and break-bulk transport solutions.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Bulk mineral and commodity rail transport [cite: 23]",
-                  "Rail siding and loading coordination [cite: 24]",
-                  "Cross-border rail corridor management [cite: 25]",
-                  "Rail-to-port logistics integration [cite: 26]"
+                  "Bulk mineral and commodity rail transport ",
+                  "Rail siding and loading coordination ",
+                  "Cross-border rail corridor management ",
+                  "Rail-to-port logistics integration"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="text-ketani-500 shrink-0 mt-1" size={18} />
@@ -91,14 +91,14 @@ export default function Services() {
               </div>
               <h2 className="text-4xl font-bold text-slate-900 mb-6">Warehousing & Port Operations</h2>
               <p className="text-slate-600 text-lg mb-6 leading-relaxed">
-                We manage and coordinate warehousing and terminal operations across key Southern African export gateways for materials emanating to and from Zimbabwe[cite: 30].
+                We manage and coordinate warehousing and terminal operations across key Southern African export gateways for materials emanating to and from Zimbabwe.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Bulk and Break-bulk cargo handling [cite: 32]",
-                  "Stockpile management & Sampling [cite: 32, 35]",
-                  "Clearing and forwarding services [cite: 33]",
-                  "Vessel loading co-ordination [cite: 34]"
+                  "Bulk and Break-bulk cargo handling",
+                  "Stockpile management & Sampling ",
+                  "Clearing and forwarding services",
+                  "Vessel loading co-ordination"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="text-ketani-500 shrink-0 mt-1" size={18} />
@@ -135,14 +135,14 @@ export default function Services() {
               </div>
               <h2 className="text-4xl font-bold text-slate-900 mb-6">Ocean Freight</h2>
               <p className="text-slate-600 text-lg mb-6 leading-relaxed">
-                Ketani Logistics provides ocean freight solutions connecting Southern African exports to global markets[cite: 38], ensuring reliability and cost-effectiveness.
+                Ketani Logistics provides ocean freight solutions connecting Southern African exports to global markets, ensuring reliability and cost-effectiveness.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Bulk and break-bulk ocean freight [cite: 40]",
-                  "Containerised shipping solutions [cite: 41]",
-                  "Vessel chartering and scheduling support [cite: 42]",
-                  "Cargo insurance (Port of Loading to Discharge) [cite: 43]"
+                  "Bulk and break-bulk ocean freight",
+                  "Containerised shipping solutions",
+                  "Vessel chartering and scheduling support",
+                  "Cargo insurance (Port of Loading to Discharge)"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-slate-700">
                     <CheckCircle2 className="text-ketani-500 shrink-0 mt-1" size={18} />

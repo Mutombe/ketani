@@ -33,9 +33,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="max-w-md text-slate-400 leading-relaxed mb-8">
-              [cite_start]Revolutionizing bulk commodity logistics. We provide
+              Revolutionizing bulk commodity logistics. We provide
               seamless coordination of rail, port, and sea freight operations
-              across Southern Africa and beyond[cite: 10, 13].
+              across Southern Africa and beyond.
             </p>
             <div className="flex gap-4">
               {[Facebook, FaXTwitter, Linkedin].map((Icon, i) => (
@@ -86,9 +86,9 @@ export default function Footer() {
                   <strong className="block text-white mb-1">
                     Zimbabwe (Regional)
                   </strong>
-                  [cite_start]7 Kings' Row, Northgate,
+                  7 Kings' Row, Northgate,
                   <br />
-                  Borrowdale, Harare [cite: 109-111]
+                  Borrowdale, Harare
                 </span>
               </li>
               <li className="flex gap-3 items-start">
@@ -97,9 +97,9 @@ export default function Footer() {
                   <strong className="block text-white mb-1">
                     Mauritius (HQ)
                   </strong>
-                  [cite_start]3rd Floor Carleton Tower,
+                   3rd Floor Carleton Tower,
                   <br />
-                  Ebene [cite: 106-108]
+                  Ebene 
                 </span>
               </li>
             </ul>

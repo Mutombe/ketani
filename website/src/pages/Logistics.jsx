@@ -33,7 +33,7 @@ export default function Logistics() {
             End-to-End <span className="text-ketani-500">Execution</span>
           </motion.h1>
           <p className="text-xl text-slate-200 max-w-2xl mx-auto">
-            Providing seamless coordination from inland origin to global destination[cite: 7].
+            Providing seamless coordination from inland origin to global destination.
           </p>
         </div>
       </section>
@@ -48,7 +48,7 @@ export default function Logistics() {
                     </div>
                     <h2 className="text-4xl font-bold text-slate-900 mb-6">Rail Logistics</h2>
                     <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                        Rail forms a core pillar of our capability. We specialize in rail-based bulk solutions for high-volume commodities moving from inland producers to export gateways [cite: 19-21].
+                        Rail forms a core pillar of our capability. We specialize in rail-based bulk solutions for high-volume commodities moving from inland producers to export gateways.
                     </p>
                     <div className="bg-slate-50 p-8 rounded-2xl border border-slate-100">
                         <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2"><ShieldCheck className="text-ketani-500"/> Key Capabilities</h4>
@@ -84,7 +84,7 @@ export default function Logistics() {
                     </div>
                     <h2 className="text-4xl font-bold text-slate-900 mb-6">Port & Terminal Operations</h2>
                     <p className="text-slate-600 text-lg mb-8 leading-relaxed">
-                        We manage warehousing and terminal operations across key Southern African export gateways for materials emanating to and from Zimbabwe[cite: 30].
+                        We manage warehousing and terminal operations across key Southern African export gateways for materials emanating to and from Zimbabwe.
                     </p>
                     <ul className="space-y-4">
                         {[
@@ -113,7 +113,7 @@ export default function Logistics() {
                 <Ship size={48} className="text-ketani-600 mx-auto mb-6" />
                 <h2 className="text-4xl font-bold text-slate-900 mb-4">Global Ocean Freight</h2>
                 <p className="text-slate-600 text-lg">
-                    Connecting Southern African exports to global markets in Europe, Asia, and the Americas[cite: 8, 38].
+                    Connecting Southern African exports to global markets in Europe, Asia, and the Americas.
                 </p>
             </div>
             

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Globe, Send, Building2 } from 'lucide-react';
 import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps";
@@ -58,12 +58,51 @@ function OfficeMap() {
 }
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: 'General Inquiry',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    // Determine which email to use based on service type
+    const emailAddress = formData.service === 'Legal/Compliance Matter' 
+      ? 'legal@ketanilogistics.com' 
+      : 'info@ketanilogistics.com';
+    
+    // Create the email subject
+    const subject = encodeURIComponent(`${formData.service} - From ${formData.name}`);
+    
+    // Create the email body
+    const body = encodeURIComponent(
+      `Hello Ketani Logistics Team,\n\n` +
+      `Name: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Service Interest: ${formData.service}\n\n` +
+      `Message:\n${formData.message}\n\n` +
+      `Best regards,\n${formData.name}`
+    );
+    
+    // Open default email client with prefilled data
+    window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <>
       <SEO title="Contact Us" description="Get in touch with Ketani Logistics. Offices in Zimbabwe and Mauritius." />
       
       {/* 1. HERO SECTION */}
-      <section className="relative h-[50vh] flex items-center justify-center bg-slate-900 overflow-hidden">
+      <section className="relative h-[70vh] flex items-center justify-center bg-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900 z-10" />
           <img 
@@ -98,7 +137,7 @@ export default function Contact() {
                             <h3 className="font-bold text-slate-900 uppercase tracking-wider text-sm mb-2">Head Office</h3>
                             <p className="text-slate-800 font-bold mb-1">Mauritius</p>
                             <p className="text-slate-500 text-sm leading-relaxed">
-                                [cite_start]3rd Floor Carleton Tower,<br/>Wall Street, Cybercity, Ebene [cite: 106-108]
+                                3rd Floor Carleton Tower,<br/>Wall Street, Cybercity, Ebene 
                             </p>
                         </motion.div>
 
@@ -109,7 +148,7 @@ export default function Contact() {
                             <h3 className="font-bold text-slate-900 uppercase tracking-wider text-sm mb-2">Regional Office</h3>
                             <p className="text-slate-800 font-bold mb-1">Zimbabwe</p>
                             <p className="text-slate-500 text-sm leading-relaxed">
-                                [cite_start]7 Kings' Row, Northgate,<br/>Borrowdale, Harare [cite: 109-111]
+                                7 Kings' Row, Northgate,<br/>Borrowdale, Harare 
                             </p>
                         </motion.div>
                     </div>
@@ -122,14 +161,33 @@ export default function Contact() {
                     {/* Direct Contact List */}
                     <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                         <h3 className="font-bold text-slate-900 mb-6">Direct Lines</h3>
-                        <div className="grid md:grid-cols-2 gap-4">
-                            <a href="mailto:admin@ketanilogistics.com" className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl hover:bg-ketani-50 transition-colors">
-                                <Mail className="text-ketani-500" size={20} />
-                                <span className="text-slate-700 text-sm font-medium">admin@ketanilogistics.com</span>
+                        <div className="space-y-4">
+                            <a 
+                                href="mailto:info@ketanilogistics.com?subject=General%20Inquiry%20-%20Ketani%20Logistics&body=Hello%20Ketani%20Logistics%20Team%2C%0A%0AI%20am%20reaching%20out%20regarding%3A%0A%0A%5BPlease%20describe%20your%20inquiry%20here%5D%0A%0AThank%20you%2C%0A%5BYour%20Name%5D" 
+                                className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl hover:bg-ketani-50 transition-colors group"
+                            >
+                                <Mail className="text-ketani-500 group-hover:scale-110 transition-transform" size={20} />
+                                <div className="flex-1">
+                                    <span className="text-slate-700 text-sm font-medium block">info@ketanilogistics.com</span>
+                                    <span className="text-slate-500 text-xs">General inquiries & quotes</span>
+                                </div>
                             </a>
-                            <a href="tel:+263772285647" className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl hover:bg-ketani-50 transition-colors">
-                                <Phone className="text-ketani-500" size={20} />
-                                <span className="text-slate-700 text-sm font-medium">+263 772 285 647</span>
+                            <a 
+                                href="mailto:legal@ketanilogistics.com?subject=Legal%20Inquiry%20-%20Ketani%20Logistics&body=Dear%20Legal%20Team%2C%0A%0AI%20am%20writing%20regarding%20a%20legal%20matter%3A%0A%0A%5BPlease%20describe%20your%20legal%20inquiry%20here%5D%0A%0ABest%20regards%2C%0A%5BYour%20Name%5D%0A%5BYour%20Company%5D" 
+                                className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl hover:bg-ketani-50 transition-colors group"
+                            >
+                                <Mail className="text-ketani-500 group-hover:scale-110 transition-transform" size={20} />
+                                <div className="flex-1">
+                                    <span className="text-slate-700 text-sm font-medium block">legal@ketanilogistics.com</span>
+                                    <span className="text-slate-500 text-xs">Legal & compliance matters</span>
+                                </div>
+                            </a>
+                            <a href="tel:+263772285647" className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl hover:bg-ketani-50 transition-colors group">
+                                <Phone className="text-ketani-500 group-hover:scale-110 transition-transform" size={20} />
+                                <div className="flex-1">
+                                    <span className="text-slate-700 text-sm font-medium block">+263 772 285 647</span>
+                                    <span className="text-slate-500 text-xs">Zimbabwe office</span>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -147,31 +205,69 @@ export default function Contact() {
                         <p className="text-slate-500">Need a quote or have a question? We respond within 24 hours.</p>
                     </div>
 
-                    <form className="space-y-6">
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 mb-2">Name</label>
-                                <input type="text" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all" placeholder="John Doe" />
+                                <input 
+                                    type="text" 
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all" 
+                                    placeholder="John Doe"
+                                    required 
+                                />
                             </div>
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 mb-2">Email</label>
-                                <input type="email" className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all" placeholder="john@company.com" />
+                                <input 
+                                    type="email" 
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all" 
+                                    placeholder="john@company.com"
+                                    required 
+                                />
                             </div>
                         </div>
                         <div>
                             <label className="block text-sm font-bold text-slate-700 mb-2">Service Interest</label>
-                            <select className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all">
+                            <select 
+                                name="service"
+                                value={formData.service}
+                                onChange={handleChange}
+                                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all"
+                            >
+                                <option>General Inquiry</option>
                                 <option>Rail Logistics</option>
                                 <option>Ocean Freight</option>
                                 <option>Warehousing</option>
-                                <option>General Inquiry</option>
+                                <option>Legal/Compliance Matter</option>
                             </select>
+                            {formData.service === 'Legal/Compliance Matter' && (
+                              <p className="mt-2 text-xs text-amber-600 flex items-center gap-1">
+                                <Mail size={12} /> This will be sent to our legal team at legal@ketanilogistics.com
+                              </p>
+                            )}
                         </div>
                         <div>
                             <label className="block text-sm font-bold text-slate-700 mb-2">Message</label>
-                            <textarea rows={5} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all" placeholder="Tell us about your cargo..."></textarea>
+                            <textarea 
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                rows={5} 
+                                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ketani-500 outline-none transition-all" 
+                                placeholder="Tell us about your cargo..."
+                                required
+                            ></textarea>
                         </div>
-                        <button className="w-full bg-slate-900 hover:bg-ketani-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2">
+                        <button 
+                            type="submit"
+                            className="w-full bg-slate-900 hover:bg-ketani-600 text-white font-bold py-4 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2"
+                        >
                             Send Message <Send size={18} />
                         </button>
                     </form>

@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, ChevronDown, Home, Truck, Info, Briefcase, Phone, Package, Download, Layers, FolderOpen } from 'lucide-react';
+import { Menu, X, ChevronRight, ChevronDown, Home, Truck, Info, Briefcase, Phone, Package, Download, Layers, FolderOpen, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SearchModal from './SearchModal';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   
   const location = useLocation();
 
@@ -47,6 +49,9 @@ export default function Navbar() {
 
   return (
     <>
+        {/* Search Modal */}
+        <SearchModal isOpen={showSearch} onClose={() => setShowSearch(false)} />
+
         <nav className={`fixed w-full z-[100] transition-all duration-300 ${scrolled || isOpen ? 'bg-slate-900/95 backdrop-blur-md shadow-xl py-3 border-b border-white/5' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
             {/* Logo */}
@@ -120,6 +125,17 @@ export default function Navbar() {
                 </AnimatePresence>
             </div>
 
+            {/* Desktop Search Button */}
+            <motion.button 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setShowSearch(true)}
+                className={`relative px-4 py-2 rounded-full flex items-center gap-2 text-sm font-medium transition-all hover:bg-white/10 ${scrolled ? 'text-slate-300 hover:text-white' : 'text-slate-200 hover:text-white'}`}
+                aria-label="Search"
+            >
+                <Search size={16} className="opacity-70" />
+            </motion.button>
+
             <Link to="/contact" className="ml-4">
                 <motion.button 
                 whileHover={{ scale: 1.05 }}
@@ -131,13 +147,26 @@ export default function Navbar() {
             </Link>
             </div>
 
-            {/* Mobile Toggle */}
-            <button 
-                className="lg:hidden text-white bg-white/10 p-2 rounded-lg z-[110] relative hover:bg-white/20 transition-colors" 
-                onClick={() => setIsOpen(!isOpen)}
-            >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            {/* Mobile Search & Toggle */}
+            <div className="lg:hidden flex items-center gap-2 z-[110]">
+                {/* Mobile Search Button */}
+                <motion.button 
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setShowSearch(true)}
+                    className="text-white bg-white/10 p-2 rounded-lg hover:bg-white/20 transition-colors"
+                    aria-label="Search"
+                >
+                    <Search size={20} />
+                </motion.button>
+
+                {/* Mobile Menu Toggle */}
+                <button 
+                    className="text-white bg-white/10 p-2 rounded-lg hover:bg-white/20 transition-colors" 
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                </button>
+            </div>
         </div>
         </nav>
 
