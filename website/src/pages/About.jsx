@@ -19,7 +19,7 @@ export default function About() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900/90 z-10" />
           <img 
-            src="/9.jpg" 
+            src="/k18.jpg" 
             className="w-full h-full object-cover" 
             alt="About Ketani" 
           />

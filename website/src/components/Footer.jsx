@@ -84,17 +84,6 @@ export default function Footer() {
                 <MapPin className="text-ketani-500 shrink-0 mt-1" size={18} />
                 <span className="text-sm">
                   <strong className="block text-white mb-1">
-                    Zimbabwe (Regional)
-                  </strong>
-                  7 Kings' Row, Northgate,
-                  <br />
-                  Borrowdale, Harare
-                </span>
-              </li>
-              <li className="flex gap-3 items-start">
-                <MapPin className="text-ketani-500 shrink-0 mt-1" size={18} />
-                <span className="text-sm">
-                  <strong className="block text-white mb-1">
                     Mauritius (HQ)
                   </strong>
                    3rd Floor Carleton Tower,

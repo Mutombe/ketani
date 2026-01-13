@@ -19,7 +19,7 @@ export default function Logistics() {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-slate-900/60 z-10" />
           <img 
-            src="/13.jpg" 
+            src="/k3.jpeg" 
             className="w-full h-full object-cover" 
             alt="Logistics Network" 
           />
@@ -100,7 +100,7 @@ export default function Logistics() {
                     </ul>
                 </motion.div>
                 <motion.div {...fadeIn} className="lg:order-1 h-full min-h-[400px] relative rounded-3xl overflow-hidden shadow-2xl">
-                     <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009&auto=format&fit=crop" className="w-full h-full object-cover" alt="Port Operations" />
+                     <img src="/k19.jpg" className="w-full h-full object-cover" alt="Port Operations" />
                 </motion.div>
             </div>
         </div>

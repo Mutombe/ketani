@@ -37,9 +37,9 @@ const handleAction = (action) => {
 };
 
 const heroImages = [
-  "/23.jpg", // Container Port
-  "/4.jpg", // Rail Transport
-  "/12.jpg", // Ocean/Ship
+  "/k1.jpeg", // Container Port
+  "/k9.jpeg", // Rail Transport
+  "/k10.jpeg", // Ocean/Ship
 ];
 
 // Helper Component for CountUp Animation
@@ -273,7 +273,7 @@ export default function Home() {
             >
               <div className="relative overflow-hidden">
                 <img
-                  src="/1.jpg"
+                  src="/k16.jpeg"
                   alt="Container Ship"
                   className="w-full h-full object-cover rounded-2xl"
                 />
@@ -328,7 +328,7 @@ export default function Home() {
                 icon: Anchor,
                 title: "Ocean Freight",
                 desc: "Connecting Southern African exports to global markets via strategic sea routes.",
-                image: "/ship.jpg",
+                image: "/k12.jpeg",
                 // Deep Blue Overlay for Ocean
                 overlay: "from-blue-950 via-blue-900/80 to-blue-900/10",
                 accent: "bg-blue-500",
