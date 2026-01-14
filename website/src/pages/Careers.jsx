@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const jobs = [
-  { title: "Logistics Coordinator", location: "Harare, Zimbabwe", type: "Full-time", dept: "Operations" },
-  { title: "Senior Customs Clearing Agent", location: "Beira, Mozambique", type: "Full-time", dept: "Port Ops" },
-  { title: "Business Development Manager", location: "Johannesburg, SA", type: "Full-time", dept: "Sales" },
-  { title: "Rail Operations Manager", location: "Bulawayo, Zimbabwe", type: "Full-time", dept: "Rail Ops" },
 ];
 
 export default function Careers() {

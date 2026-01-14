@@ -8,7 +8,6 @@ const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
 
 // Specific markers for the offices
 const officeMarkers = [
-  { name: "Harare (Regional)", coordinates: [31.054, -17.829], type: "office" },
   { name: "Mauritius (HQ)", coordinates: [57.5, -20.2], type: "hq" }, 
 ];
 
@@ -19,7 +18,7 @@ function OfficeMap() {
           <Geographies geography={geoUrl}>
             {({ geographies }) =>
               geographies.map((geo) => {
-                const isHighlighted = ["Zimbabwe", "Mauritius"].includes(geo.properties.name);
+                const isHighlighted = ["Mauritius"].includes(geo.properties.name);
                 return (
                   <Geography
                     key={geo.rsmKey}
@@ -141,16 +140,7 @@ export default function Contact() {
                             </p>
                         </motion.div>
 
-                        <motion.div initial={{ x: -20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.1 }} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 group hover:border-ketani-500 transition-colors">
-                            <div className="w-10 h-10 bg-ketani-100 rounded-lg flex items-center justify-center text-ketani-600 mb-4 group-hover:bg-ketani-500 group-hover:text-white transition-colors">
-                                <Building2 size={20}/>
-                            </div>
-                            <h3 className="font-bold text-slate-900 uppercase tracking-wider text-sm mb-2">Regional Office</h3>
-                            <p className="text-slate-800 font-bold mb-1">Zimbabwe</p>
-                            <p className="text-slate-500 text-sm leading-relaxed">
-                                7 Kings' Row, Northgate,<br/>Borrowdale, Harare 
-                            </p>
-                        </motion.div>
+
                     </div>
 
                     {/* Interactive Map */}
@@ -180,13 +170,6 @@ export default function Contact() {
                                 <div className="flex-1">
                                     <span className="text-slate-700 text-sm font-medium block">legal@ketanilogistics.com</span>
                                     <span className="text-slate-500 text-xs">Legal & compliance matters</span>
-                                </div>
-                            </a>
-                            <a href="tel:+263772285647" className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl hover:bg-ketani-50 transition-colors group">
-                                <Phone className="text-ketani-500 group-hover:scale-110 transition-transform" size={20} />
-                                <div className="flex-1">
-                                    <span className="text-slate-700 text-sm font-medium block">+263 772 285 647</span>
-                                    <span className="text-slate-500 text-xs">Zimbabwe office</span>
                                 </div>
                             </a>
                         </div>

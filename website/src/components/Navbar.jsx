@@ -43,7 +43,7 @@ export default function Navbar() {
   ];
 
   const resourceLinks = [
-    { name: 'Company Profile', icon: Download, action: 'download', path: '/Ketani_Logistics_Company_Profile.pdf' },
+    //{ name: 'Company Profile', icon: Download, action: 'download', path: '/Ketani_Logistics_Company_Profile.pdf' },
     { name: 'Hypermedia & News', icon: Layers, path: '/hypermedia' }
   ];
 

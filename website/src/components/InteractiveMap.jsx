@@ -12,21 +12,22 @@ import { motion } from "framer-motion";
 // 1. Geography JSON (Standard World Map)
 const geoUrl = "https://unpkg.com/world-atlas@2.0.2/countries-110m.json";
 
-// 2. Ketani's Hubs (Based on your Profile)
+// 2. Ketani's Hubs (Updated: HQ is Mauritius)
 const markers = [
-  { name: "Zimbabwe (HQ)", coordinates: [29.1549, -19.0154], type: "hq" },
-  { name: "Durban (Port)", coordinates: [31.0218, -29.8587], type: "port" },
-  { name: "Beira (Port)", coordinates: [34.8389, -19.8436], type: "port" },
+  { name: "Mauritius (HQ)", coordinates: [57.5522, -20.3484], type: "hq" },
+  //{ name: "Zimbabwe", coordinates: [29.1549, -19.0154], type: "port" }, // Kept as a hub
+  //{ name: "Durban (Port)", coordinates: [31.0218, -29.8587], type: "port" },
+  //{ name: "Beira (Port)", coordinates: [34.8389, -19.8436], type: "port" },
   { name: "Shanghai (China)", coordinates: [121.4737, 31.2304], type: "dest" },
   { name: "Rotterdam (EU)", coordinates: [4.47917, 51.9225], type: "dest" },
   { name: "Houston (USA)", coordinates: [-95.3698, 29.7604], type: "dest" },
 ];
 
-// 3. Logistics Routes (Curved Lines)
+// 3. Logistics Routes (Updated: Originating from Mauritius)
 const routes = [
-  { from: [31.0218, -29.8587], to: [121.4737, 31.2304] }, // Durban -> China
-  { from: [34.8389, -19.8436], to: [4.47917, 51.9225] }, // Beira -> Europe
-  { from: [31.0218, -29.8587], to: [-95.3698, 29.7604] }, // Durban -> USA
+  { from: [57.5522, -20.3484], to: [121.4737, 31.2304] }, // Mauritius -> China
+  { from: [57.5522, -20.3484], to: [4.47917, 51.9225] }, // Mauritius -> Europe
+  { from: [57.5522, -20.3484], to: [-95.3698, 29.7604] }, // Mauritius -> USA
 ];
 
 const MapChart = () => {
@@ -50,12 +51,7 @@ const MapChart = () => {
               geographies.map((geo) => {
                 // Highlight Southern Africa specifically
                 const isSouthernAfrica = [
-                  "Zimbabwe",
-                  "South Africa",
-                  "Mozambique",
-                  "Zambia",
-                  "Namibia",
-                  "Botswana",
+                  "Mauritius", // Added to highlight the HQ island
                 ].includes(geo.properties.name);
 
                 return (
@@ -97,10 +93,7 @@ const MapChart = () => {
                 <animateMotion
                   dur={`${3 + index}s`}
                   repeatCount="indefinite"
-                  path={`M${route.from.join(",")} L${route.to.join(",")}`} // Simplified path for demo logic
-                  // Note: For true curves in SVG we usually calculate the bezier,
-                  // but react-simple-maps handles coords differently.
-                  // For visual simplicity here, we use the Line component visual.
+                  path={`M${route.from.join(",")} L${route.to.join(",")}`} 
                 />
               </motion.circle>
             </React.Fragment>
@@ -151,7 +144,7 @@ const MapChart = () => {
       <div className="absolute bottom-3 right-3 sm:bottom-6 sm:right-6 bg-slate-800/80 backdrop-blur p-3 sm:p-4 rounded-xl border border-slate-700 text-[10px] sm:text-xs text-white">
         <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
           <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-500"></span>{" "}
-          Headquarters (Harare)
+          Headquarters (Mauritius)
         </div>
         <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
           <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-ketani-500"></span>{" "}
