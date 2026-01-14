@@ -1,8 +1,9 @@
-import { Briefcase, MapPin, Clock, ArrowRight, Zap, Users, Globe } from 'lucide-react';
+import { Briefcase, MapPin, Clock, ArrowRight, Zap, Users, Globe, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const jobs = [
+  // Add job objects here when available
 ];
 
 export default function Careers() {
@@ -25,7 +26,7 @@ export default function Careers() {
                 <span className="text-ketani-400 font-bold tracking-widest uppercase mb-4 block">Work With Us</span>
                 <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">Build the Future of <br/><span className="text-ketani-500">Logistics</span></h1>
                 <p className="text-xl text-slate-300 leading-relaxed max-w-2xl">
-                    Join a team boasting over 50 years of combined experience.We are revolutionizing bulk commodity transport across Africa
+                    Join a team boasting over 50 years of combined experience. We are revolutionizing bulk commodity transport across Africa.
                 </p>
             </motion.div>
         </div>
@@ -62,28 +63,51 @@ export default function Careers() {
             </p>
           </div>
 
-          <div className="grid gap-4 max-w-4xl mx-auto">
-            {jobs.map((job, index) => (
+          <div className="max-w-4xl mx-auto">
+            {jobs.length > 0 ? (
+              // RENDER JOBS IF ARRAY HAS ITEMS
+              <div className="grid gap-4">
+                {jobs.map((job, index) => (
+                  <motion.div 
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 hover:border-ketani-300 hover:shadow-lg transition-all flex flex-col md:flex-row justify-between items-center gap-6 group"
+                  >
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 group-hover:text-ketani-600 transition-colors">{job.title}</h3>
+                      <div className="flex flex-wrap gap-4 mt-3 text-slate-500 text-sm font-medium">
+                        <span className="flex items-center gap-1.5"><MapPin size={16} className="text-ketani-500"/> {job.location}</span>
+                        <span className="flex items-center gap-1.5"><Clock size={16} className="text-ketani-500"/> {job.type}</span>
+                        <span className="flex items-center gap-1.5"><Briefcase size={16} className="text-ketani-500"/> {job.dept}</span>
+                      </div>
+                    </div>
+                    <button className="px-8 py-3 bg-slate-50 text-slate-900 font-bold rounded-xl group-hover:bg-ketani-600 group-hover:text-white transition-all whitespace-nowrap flex items-center gap-2">
+                      Apply Now <ArrowRight size={16} />
+                    </button>
+                  </motion.div>
+                ))}
+              </div>
+            ) : (
+              // RENDER THIS IF ARRAY IS EMPTY
               <motion.div 
-                key={index}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 hover:border-ketani-300 hover:shadow-lg transition-all flex flex-col md:flex-row justify-between items-center gap-6 group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                className="text-center py-16 px-6 bg-white rounded-2xl border border-dashed border-slate-300"
               >
-                <div>
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-ketani-600 transition-colors">{job.title}</h3>
-                  <div className="flex flex-wrap gap-4 mt-3 text-slate-500 text-sm font-medium">
-                    <span className="flex items-center gap-1.5"><MapPin size={16} className="text-ketani-500"/> {job.location}</span>
-                    <span className="flex items-center gap-1.5"><Clock size={16} className="text-ketani-500"/> {job.type}</span>
-                    <span className="flex items-center gap-1.5"><Briefcase size={16} className="text-ketani-500"/> {job.dept}</span>
-                  </div>
+                <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Search className="text-slate-400" size={32} />
                 </div>
-                <button className="px-8 py-3 bg-slate-50 text-slate-900 font-bold rounded-xl group-hover:bg-ketani-600 group-hover:text-white transition-all whitespace-nowrap flex items-center gap-2">
-                  Apply Now <ArrowRight size={16} />
-                </button>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">No Openings at the Moment</h3>
+                <p className="text-slate-500 max-w-md mx-auto mb-8">
+                  We currently don't have any open positions. However, we are always growing, so please check back soon.
+                </p>
+                <a href="mailto:careers@ketanilogistics.com" className="inline-flex items-center gap-2 text-ketani-600 font-bold hover:text-ketani-700 transition-colors">
+                   Email General Inquiry <ArrowRight size={16} />
+                </a>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>

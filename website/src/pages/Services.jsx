@@ -110,7 +110,7 @@ export default function Services() {
             
             {/* Image Container */}
             <motion.div {...fadeIn} className="lg:order-1 relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?q=80&w=2009&auto=format&fit=crop" className="w-full h-full object-cover" alt="Port Operations" />
+              <img src="/18.jpg" className="w-full h-full object-cover" alt="Port Operations" />
               
               {/* Top Fade */}
               <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-slate-50 to-transparent" />
